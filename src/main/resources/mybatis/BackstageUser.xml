@@ -5,9 +5,9 @@
 
     <!--  用户登录  -->
     <select id="selectSingleBackStageUserByUsername" parameterType="String" resultType="cn.whiteleaf03.blogbackend.entity.BackstageUser">
-        select count(*)
+        select *
         from backstageuser
-        where username = #{username} and password = #{password};
+        where username = #{username};
     </select>
 
 </mapper>
