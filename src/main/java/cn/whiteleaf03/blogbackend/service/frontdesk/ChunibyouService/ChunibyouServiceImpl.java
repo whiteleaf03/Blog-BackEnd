@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @author WhiteLeaf03
@@ -28,7 +27,7 @@ public class ChunibyouServiceImpl implements ChunibyouService {
     @Override
     public ResponseResult selectAllSentences() {
         List<String> list = chunibyouMapper.selectAllSentences();
-        if (Objects.isNull(list)) {
+        if (list.isEmpty()) {
             return ResponseResult.error("暂无数据");
         } else {
             return ResponseResult.success(list);
@@ -42,7 +41,7 @@ public class ChunibyouServiceImpl implements ChunibyouService {
     @Override
     public ResponseResult selectRandomSingleSentences() {
         List<String> list = chunibyouMapper.selectAllSentences();
-        if (Objects.isNull(list)) {
+        if (list.isEmpty()) {
             return ResponseResult.error("暂无数据");
         } else {
             int index = (int) (Math.random() * list.size());
