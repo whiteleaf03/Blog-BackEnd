@@ -1,7 +1,6 @@
 package cn.whiteleaf03.blogbackend.mapper;
 
-import cn.whiteleaf03.blogbackend.entity.BackstageUser;
-import cn.whiteleaf03.blogbackend.utils.ResponseResult;
+import cn.whiteleaf03.blogbackend.security.BackstageUser;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -15,6 +14,6 @@ public interface BackstageUserMapper {
      * @param username 用户名
      * @return 返回查询到的用户信息
      */
-    BackstageUser selectSingleBackStageUserByUsername(String username);
+    BackstageUser selectSingleBackEndUserByUsername(String username);
 
 }

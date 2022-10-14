@@ -4,7 +4,7 @@
 <mapper namespace="cn.whiteleaf03.blogbackend.mapper.BackstageUserMapper">
 
     <!--  用户登录  -->
-    <select id="selectSingleBackStageUserByUsername" parameterType="String" resultType="cn.whiteleaf03.blogbackend.entity.BackstageUser">
+    <select id="selectSingleBackEndUserByUsername" parameterType="String" resultType="cn.whiteleaf03.blogbackend.security.BackstageUser">
         select *
         from backstageuser
         where username = #{username};

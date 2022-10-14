@@ -8,6 +8,7 @@ class BlogBackEndApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }
