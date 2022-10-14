@@ -1,10 +1,12 @@
 package cn.whiteleaf03.blogbackend.service.frontdesk.ChunibyouService;
 
 import cn.whiteleaf03.blogbackend.mapper.ChunibyouMapper;
+import cn.whiteleaf03.blogbackend.utils.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author WhiteLeaf03
@@ -21,21 +23,30 @@ public class ChunibyouServiceImpl implements ChunibyouService {
 
     /**
      * 获取所有中二病语句
-     * @return 查询返回的List
+     * @return 返回查询结果
      */
     @Override
-    public List<String> selectAllSentences() {
-        return chunibyouMapper.selectAllSentences();
+    public ResponseResult selectAllSentences() {
+        List<String> list = chunibyouMapper.selectAllSentences();
+        if (Objects.isNull(list)) {
+            return ResponseResult.error("暂无数据");
+        } else {
+            return ResponseResult.success(list);
+        }
     }
 
     /**
      * 获取单个中二病语句
-     * @return 返回单个中二病语句
+     * @return 返回查询结果
      */
     @Override
-    public String selectRandomSingleSentences() {
+    public ResponseResult selectRandomSingleSentences() {
         List<String> list = chunibyouMapper.selectAllSentences();
-        int index = (int) (Math.random() * list.size());
-        return list.get(index);
+        if (Objects.isNull(list)) {
+            return ResponseResult.error("暂无数据");
+        } else {
+            int index = (int) (Math.random() * list.size());
+            return ResponseResult.success(list.get(index));
+        }
     }
 }
