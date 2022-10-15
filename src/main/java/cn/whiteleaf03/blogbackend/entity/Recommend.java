@@ -11,5 +11,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Recommend {
+    /**
+     * 主键
+     */
+    private Long id;
 
+    /**
+     * 封面路径
+     */
+    private String cover;
+
+    /**
+     * 标题
+     */
+    private String title;
+
+    /**
+     * 类别
+     */
+    private String type;
 }
