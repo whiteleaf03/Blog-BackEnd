@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.whiteleaf03.blogbackend.mapper.NoteMapper">
+    <select id="queryAllNote" resultType="list">
+        select id, date, cover, title, subtitle
+        from note;
+    </select>
+
+    <select id="querySingleNoteById" parameterType="long" resultType="cn.whiteleaf03.blogbackend.entity.Note">
+        select *
+        from note
+        where id = #{id};
+    </select>
+</mapper>
