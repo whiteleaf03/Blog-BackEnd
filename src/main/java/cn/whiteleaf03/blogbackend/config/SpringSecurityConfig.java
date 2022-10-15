@@ -47,7 +47,7 @@ public class SpringSecurityConfig {
         http
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/bs/api/login").permitAll()
-                .antMatchers("/fd/api/*").permitAll()
+                .antMatchers("/fd/api/**").permitAll()
                 .anyRequest().authenticated();
 
         return http.build();

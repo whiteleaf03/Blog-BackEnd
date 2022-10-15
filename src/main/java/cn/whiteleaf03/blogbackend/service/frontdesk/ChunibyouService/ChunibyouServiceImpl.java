@@ -16,7 +16,6 @@ public class ChunibyouServiceImpl implements ChunibyouService {
 
     @Autowired
     public ChunibyouServiceImpl(ChunibyouMapper chunibyouMapper) {
-        System.out.println("Service构造器");
         this.chunibyouMapper = chunibyouMapper;
     }
 
