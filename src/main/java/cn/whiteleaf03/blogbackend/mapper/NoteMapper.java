@@ -21,5 +21,5 @@ public interface NoteMapper {
      * @param id 要查询的笔记的id
      * @return 返回查询得到的笔记
      */
-    Note queryAllNote(Long id);
+    Note querySingleNoteById(Long id);
 }
