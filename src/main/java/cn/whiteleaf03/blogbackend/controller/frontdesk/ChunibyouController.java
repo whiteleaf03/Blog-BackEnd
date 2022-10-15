@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author WhiteLeaf03
  */
 @RestController
-@RequestMapping("/fd/api")
+@RequestMapping("/fd/api/chunibyou")
 public class ChunibyouController {
     private final ChunibyouService chunibyouService;
 
@@ -20,7 +20,7 @@ public class ChunibyouController {
         this.chunibyouService = chunibyouService;
     }
 
-    @GetMapping("/chunibyou")
+    @GetMapping("")
     public ResponseResult getChunibyou(int random) {
         if (random == 1) {
             return ResponseResult.success(chunibyouService.selectRandomSingleSentences());
