@@ -17,5 +17,5 @@ public interface NoteService {
      * @param id 要查询的笔记的id
      * @return 返回查询得到的笔记
      */
-    ResponseResult queryAllNote(Long id);
+    ResponseResult querySingleNoteById(Long id);
 }

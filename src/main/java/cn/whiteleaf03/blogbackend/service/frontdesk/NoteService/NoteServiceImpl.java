@@ -41,7 +41,7 @@ public class NoteServiceImpl implements NoteService {
      * @return 返回查询得到的笔记
      */
     @Override
-    public ResponseResult queryAllNote(Long id) {
+    public ResponseResult querySingleNoteById(Long id) {
         Note note = noteMapper.querySingleNoteById(id);
         if (Objects.isNull(note)) {
             return ResponseResult.error("暂无数据");
