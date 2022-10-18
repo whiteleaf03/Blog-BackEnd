@@ -15,4 +15,10 @@ public interface SaysayMapper {
      * @return 返回说说列表
      */
     List<Saysay> queryAllSaysay();
+
+    /**
+     * 添加说说
+     * @param saysay 添加的说说
+     */
+    void addSaysay(Saysay saysay);
 }

@@ -12,4 +12,8 @@
         from note
         where id = #{id};
     </select>
+
+    <insert id="addNote" parameterType="cn.whiteleaf03.blogbackend.entity.Note">
+        insert into note (date, cover, title, subtitle, text) value (#{date}, #{cover}, #{title}, #{subtitle}, #{text});
+    </insert>
 </mapper>

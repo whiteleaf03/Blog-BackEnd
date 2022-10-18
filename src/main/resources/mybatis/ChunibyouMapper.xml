@@ -6,4 +6,8 @@
         select text
         from chunibyou;
     </select>
+
+    <insert id="addChunibyouSentence">
+        insert into chunibyou (text) value (#{text})
+    </insert>
 </mapper>

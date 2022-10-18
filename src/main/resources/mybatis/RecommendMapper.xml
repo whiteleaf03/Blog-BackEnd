@@ -5,4 +5,8 @@
     <select id="queryAllRecommend" resultType="list">
         select title, cover, type from recommend;
     </select>
+
+    <insert id="addRecommend" parameterType="cn.whiteleaf03.blogbackend.entity.Recommend">
+        insert into recommend (title, cover, type) value (#{title}, #{cover}, #{type});
+    </insert>
 </mapper>

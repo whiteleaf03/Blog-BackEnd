@@ -14,4 +14,10 @@ public interface ChunibyouMapper {
      * @return 查询中二病语句列表
      */
     List<String> selectAllSentences();
+
+    /**
+     * 新增中二病语句
+     * @param text 内容
+     */
+    void addChunibyouSentence(String text);
 }

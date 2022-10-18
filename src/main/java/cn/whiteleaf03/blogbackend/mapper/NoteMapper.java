@@ -22,4 +22,10 @@ public interface NoteMapper {
      * @return 返回查询得到的笔记
      */
     Note querySingleNoteById(Long id);
+
+    /**
+     * 添加笔记
+     * @param note 添加的笔记
+     */
+    void addNote(Note note);
 }

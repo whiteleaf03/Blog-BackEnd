@@ -12,4 +12,10 @@ public interface CommentMapper {
      * @return 返回评论列表
      */
     List<Comment> queryAllComment();
+
+    /**
+     * 添加评论
+     * @param comment 要添加的评论
+     */
+    void addComment(Comment comment);
 }

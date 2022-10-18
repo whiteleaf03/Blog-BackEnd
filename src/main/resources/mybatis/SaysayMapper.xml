@@ -5,4 +5,8 @@
     <select id="queryAllSaysay" resultType="list">
         select date, text from saysay;
     </select>
+
+    <insert id="addSaysay" parameterType="cn.whiteleaf03.blogbackend.entity.Saysay">
+        insert into saysay (date, text) VALUE (#{date}, #{text});
+    </insert>
 </mapper>
