@@ -1,5 +1,6 @@
 package cn.whiteleaf03.blogbackend.service.backstage.ChunibyouService;
 
+import cn.whiteleaf03.blogbackend.entity.Chunibyou;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
 
 /**
@@ -8,8 +9,8 @@ import cn.whiteleaf03.blogbackend.utils.ResponseResult;
 public interface ChunibyouService {
     /**
      * 新增中二病语句
-     * @param text 内容
+     * @param chunibyou 内容
      * @return 返回结果
      */
-    ResponseResult addChunibyouSentence(String text);
+    ResponseResult addChunibyouSentence(Chunibyou chunibyou);
 }

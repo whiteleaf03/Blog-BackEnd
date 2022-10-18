@@ -7,7 +7,7 @@
         from chunibyou;
     </select>
 
-    <insert id="addChunibyouSentence">
+    <insert id="addChunibyouSentence" parameterType="cn.whiteleaf03.blogbackend.entity.Chunibyou">
         insert into chunibyou (text) value (#{text})
     </insert>
 </mapper>

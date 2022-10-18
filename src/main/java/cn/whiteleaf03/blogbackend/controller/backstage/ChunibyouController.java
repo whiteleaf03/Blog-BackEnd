@@ -1,5 +1,6 @@
 package cn.whiteleaf03.blogbackend.controller.backstage;
 
+import cn.whiteleaf03.blogbackend.entity.Chunibyou;
 import cn.whiteleaf03.blogbackend.service.backstage.ChunibyouService.ChunibyouService;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class ChunibyouController {
     }
 
     @PostMapping("")
-    public ResponseResult addChunibyouSentence(@RequestBody String text) {
-        return chunibyouService.addChunibyouSentence(text);
+    public ResponseResult addChunibyouSentence(@RequestBody Chunibyou chunibyou) {
+        return chunibyouService.addChunibyouSentence(chunibyou);
     }
 }

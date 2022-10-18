@@ -1,5 +1,6 @@
 package cn.whiteleaf03.blogbackend.service.backstage.ChunibyouService;
 
+import cn.whiteleaf03.blogbackend.entity.Chunibyou;
 import cn.whiteleaf03.blogbackend.mapper.ChunibyouMapper;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,16 @@ public class ChunibyouServiceImpl implements ChunibyouService {
 
     /**
      * 新增中二病语句
-     * @param text 内容
+     * @param chunibyou 内容
      * @return 返回结果
      */
     @Override
-    public ResponseResult addChunibyouSentence(String text) {
+    public ResponseResult addChunibyouSentence(Chunibyou chunibyou) {
         try {
-            chunibyouMapper.addChunibyouSentence(text);
+            chunibyouMapper.addChunibyouSentence(chunibyou);
             return ResponseResult.success();
-        } catch (RuntimeException exception) {
-            return ResponseResult.error(exception.getMessage());
+        } catch (RuntimeException e) {
+            return ResponseResult.error(e.getMessage());
         }
     }
 }

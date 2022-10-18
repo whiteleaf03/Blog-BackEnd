@@ -1,5 +1,6 @@
 package cn.whiteleaf03.blogbackend.mapper;
 
+import cn.whiteleaf03.blogbackend.entity.Chunibyou;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public interface ChunibyouMapper {
 
     /**
      * 新增中二病语句
-     * @param text 内容
+     * @param chunibyou 内容
      */
-    void addChunibyouSentence(String text);
+    void addChunibyouSentence(Chunibyou chunibyou);
 }
