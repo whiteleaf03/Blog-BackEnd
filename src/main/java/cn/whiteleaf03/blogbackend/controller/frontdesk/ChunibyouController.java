@@ -23,9 +23,9 @@ public class ChunibyouController {
     @GetMapping("")
     public ResponseResult getChunibyou(int random) {
         if (random == 1) {
-            return ResponseResult.success(chunibyouService.selectRandomSingleSentences());
+            return chunibyouService.selectRandomSingleSentences();
         } else if (random == -1) {
-            return ResponseResult.success(chunibyouService.selectAllSentences());
+            return chunibyouService.selectAllSentences();
         } else {
             return ResponseResult.error("参数错误");
         }
