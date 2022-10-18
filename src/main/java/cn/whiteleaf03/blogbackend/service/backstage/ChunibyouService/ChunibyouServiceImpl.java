@@ -2,10 +2,13 @@ package cn.whiteleaf03.blogbackend.service.backstage.ChunibyouService;
 
 import cn.whiteleaf03.blogbackend.mapper.ChunibyouMapper;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Mapper
+/**
+ * @author WhiteLeaf03
+ */
+@Service
 public class ChunibyouServiceImpl implements ChunibyouService {
     private final ChunibyouMapper chunibyouMapper;
 
