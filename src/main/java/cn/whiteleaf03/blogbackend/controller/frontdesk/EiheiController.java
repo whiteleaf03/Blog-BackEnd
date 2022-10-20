@@ -16,7 +16,6 @@ public class EiheiController {
 
     public EiheiController(EiheiService eiheiService) {
         this.eiheiService = eiheiService;
-        System.out.println("诶嘿构造器");
     }
 
     @GetMapping("/recommend")

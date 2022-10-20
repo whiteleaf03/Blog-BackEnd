@@ -1,5 +1,6 @@
 package cn.whiteleaf03.blogbackend.service.backstage.LoginStatus;
 
+import cn.whiteleaf03.blogbackend.security.LoginUser;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
 
 /**
@@ -9,9 +10,8 @@ public interface LoginStatusService {
 
     /**
      * 用户登录
-     * @param username 用户名
-     * @param password 密码
+     * @param loginUser 含有用户名及密码
      * @return 返回登录结果
      */
-    ResponseResult login(String username, String password);
+    ResponseResult login(LoginUser loginUser);
 }

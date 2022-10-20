@@ -22,6 +22,6 @@ public class LoginStatusController {
 
     @PostMapping("/login")
     public ResponseResult login(@RequestBody LoginUser loginUser) {
-        return loginStatusService.login(loginUser.getUsername(), loginUser.getPassword());
+        return loginStatusService.login(loginUser);
     }
 }

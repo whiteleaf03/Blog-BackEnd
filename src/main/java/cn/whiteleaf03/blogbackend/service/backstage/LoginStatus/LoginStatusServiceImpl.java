@@ -1,6 +1,7 @@
 package cn.whiteleaf03.blogbackend.service.backstage.LoginStatus;
 
 import cn.whiteleaf03.blogbackend.security.AuthBackstageUser;
+import cn.whiteleaf03.blogbackend.security.LoginUser;
 import cn.whiteleaf03.blogbackend.utils.JwtUtil;
 import cn.whiteleaf03.blogbackend.utils.RedisCache;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
@@ -31,14 +32,13 @@ public class LoginStatusServiceImpl implements LoginStatusService {
 
     /**
      * 用户登录
-     * @param username 用户名
-     * @param password 密码
+     * @param loginUser 含有用户名及密码
      * @return 返回登录结果
      */
     @Override
-    public ResponseResult login(String username, String password) {
+    public ResponseResult login(LoginUser loginUser) {
         //用户认证
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
 
         //查看认证结果
@@ -52,6 +52,8 @@ public class LoginStatusServiceImpl implements LoginStatusService {
         //创建jwt
         String jwt = JwtUtil.createJwt(userId);
         //将用户信息存入redis
+        System.out.println("用户id");
+        System.out.println(userId);
         redisCache.setObject("login:" + userId, "阿巴阿巴");
         //返回token
         Map<String, String> map = new HashMap<>();
