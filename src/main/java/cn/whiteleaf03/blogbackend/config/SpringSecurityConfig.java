@@ -1,5 +1,7 @@
 package cn.whiteleaf03.blogbackend.config;
 
+import cn.whiteleaf03.blogbackend.security.JwtAuthenticationTokenFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -10,6 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * @author WhiteLeaf03
@@ -17,6 +20,12 @@ import org.springframework.security.web.SecurityFilterChain;
  */
 @Configuration
 public class SpringSecurityConfig {
+    private final JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
+
+    @Autowired
+    public SpringSecurityConfig(JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter) {
+        this.jwtAuthenticationTokenFilter = jwtAuthenticationTokenFilter;
+    }
 
     /**
      * 密码加密方式
@@ -49,7 +58,8 @@ public class SpringSecurityConfig {
                 .antMatchers(HttpMethod.POST, "/bs/api/login").permitAll()
                 .antMatchers("/fd/api/**").permitAll()
                 .anyRequest().authenticated();
-
+        http    //将jwtAuthenticationTokenFilter放置于UsernamePasswordAuthenticationFilter前
+                .addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 }

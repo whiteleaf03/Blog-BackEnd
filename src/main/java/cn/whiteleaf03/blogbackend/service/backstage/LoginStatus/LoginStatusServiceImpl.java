@@ -52,9 +52,7 @@ public class LoginStatusServiceImpl implements LoginStatusService {
         //创建jwt
         String jwt = JwtUtil.createJwt(userId);
         //将用户信息存入redis
-        System.out.println("用户id");
-        System.out.println(userId);
-        redisCache.setObject("login:" + userId, "阿巴阿巴");
+        redisCache.setObject("login:" + userId, loginUser);
         //返回token
         Map<String, String> map = new HashMap<>();
         map.put("token", jwt);
