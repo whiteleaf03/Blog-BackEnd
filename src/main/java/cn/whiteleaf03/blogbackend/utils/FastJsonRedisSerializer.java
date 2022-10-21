@@ -1,4 +1,4 @@
-package cn.whiteleaf03.blogbackend.config;
+package cn.whiteleaf03.blogbackend.utils;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONReader;
