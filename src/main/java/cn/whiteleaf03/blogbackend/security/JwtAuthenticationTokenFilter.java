@@ -54,14 +54,13 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             throw new RuntimeException("token非法");
         }
         //从redis中获取用户信息
-        String redisKey = "login:" + userId;
-        LoginUser loginUser = redisCache.getCacheObject(redisKey);
-        if (Objects.isNull(loginUser)) {
+        AuthBackstageUser authBackstageUser = redisCache.getCacheObject("login:" + userId);
+        if (Objects.isNull(authBackstageUser)) {
             throw new  RuntimeException("用户未登录");
         }
         //存入SecurityContextHolder
         //TODO 获取权限信息 封装到Authentication
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUser, null, null);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(authBackstageUser, null, null);
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         filterChain.doFilter(request, response);
     }

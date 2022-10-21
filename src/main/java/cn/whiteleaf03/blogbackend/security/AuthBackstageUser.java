@@ -1,5 +1,6 @@
 package cn.whiteleaf03.blogbackend.security;
 
+import cn.whiteleaf03.blogbackend.entity.BackstageUser;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +17,9 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthBackstageUser implements UserDetails, Serializable {
+public class AuthBackstageUser implements UserDetails {
 
-    private BackstageUser backendUser;
+    private BackstageUser backstageUser;
 
     /**
      * 返回权限信息
@@ -32,7 +33,7 @@ public class AuthBackstageUser implements UserDetails, Serializable {
      * 返回用户id
      */
     public Long getId() {
-        return backendUser.getId();
+        return backstageUser.getId();
     }
 
     /**
@@ -40,7 +41,7 @@ public class AuthBackstageUser implements UserDetails, Serializable {
      */
     @Override
     public String getUsername() {
-        return backendUser.getUsername();
+        return backstageUser.getUsername();
     }
 
     /**
@@ -48,7 +49,7 @@ public class AuthBackstageUser implements UserDetails, Serializable {
      */
     @Override
     public String getPassword() {
-        return backendUser.getPassword();
+        return backstageUser.getPassword();
     }
 
     /**

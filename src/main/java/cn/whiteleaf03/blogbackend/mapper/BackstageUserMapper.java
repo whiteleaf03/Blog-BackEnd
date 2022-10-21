@@ -1,6 +1,6 @@
 package cn.whiteleaf03.blogbackend.mapper;
 
-import cn.whiteleaf03.blogbackend.security.BackstageUser;
+import cn.whiteleaf03.blogbackend.entity.BackstageUser;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

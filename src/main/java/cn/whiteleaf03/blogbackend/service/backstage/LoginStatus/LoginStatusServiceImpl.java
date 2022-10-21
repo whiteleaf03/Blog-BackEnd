@@ -1,7 +1,7 @@
 package cn.whiteleaf03.blogbackend.service.backstage.LoginStatus;
 
+import cn.whiteleaf03.blogbackend.entity.BackstageUser;
 import cn.whiteleaf03.blogbackend.security.AuthBackstageUser;
-import cn.whiteleaf03.blogbackend.security.LoginUser;
 import cn.whiteleaf03.blogbackend.utils.JwtUtil;
 import cn.whiteleaf03.blogbackend.utils.RedisCache;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
@@ -32,13 +32,13 @@ public class LoginStatusServiceImpl implements LoginStatusService {
 
     /**
      * 用户登录
-     * @param loginUser 含有用户名及密码
+     * @param backstageUser 含有用户名及密码
      * @return 返回登录结果
      */
     @Override
-    public ResponseResult login(LoginUser loginUser) {
+    public ResponseResult login(BackstageUser backstageUser) {
         //用户认证
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(backstageUser.getUsername(), backstageUser.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
 
         //查看认证结果
@@ -46,13 +46,13 @@ public class LoginStatusServiceImpl implements LoginStatusService {
             throw new RuntimeException("登录失败");
         }
         //提取认证后的信息
-        AuthBackstageUser authBackstageUser = (AuthBackstageUser) authenticate.getPrincipal();
+        AuthBackstageUser user = (AuthBackstageUser) authenticate.getPrincipal();
         //获取用户的id
-        String userId = authBackstageUser.getId().toString();
+        String userId = user.getId().toString();
         //创建jwt
         String jwt = JwtUtil.createJwt(userId);
         //将用户信息存入redis
-        redisCache.setObject("login:" + userId, loginUser);
+        redisCache.setObject("login:" + userId, user);
         //返回token
         Map<String, String> map = new HashMap<>();
         map.put("token", jwt);

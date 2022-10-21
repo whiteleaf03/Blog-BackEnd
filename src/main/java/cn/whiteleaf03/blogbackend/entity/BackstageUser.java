@@ -1,4 +1,4 @@
-package cn.whiteleaf03.blogbackend.security;
+package cn.whiteleaf03.blogbackend.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
