@@ -33,4 +33,17 @@ public class CommentServiceImpl implements CommentService {
             return ResponseResult.success(list);
         }
     }
+
+    /**
+     * 添加评论
+     */
+    @Override
+    public ResponseResult insertComment(Comment comment) {
+        try {
+            commentMapper.addComment(comment);
+            return ResponseResult.success();
+        } catch (RuntimeException e) {
+            return ResponseResult.error(e.getMessage());
+        }
+    }
 }
