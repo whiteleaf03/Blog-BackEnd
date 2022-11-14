@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.whiteleaf03.blogbackend.mapper.ChunibyouMapper">
-    <select id="selectAllSentences" resultType="list">
+    <select id="selectAllSentences" resultType="cn.whiteleaf03.blogbackend.entity.Chunibyou">
         select text
-        from chunibyou;
+        from blog.chunibyou;
     </select>
 
     <insert id="addChunibyouSentence" parameterType="cn.whiteleaf03.blogbackend.entity.Chunibyou">

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.whiteleaf03.blogbackend.mapper.RecommendMapper">
-    <select id="queryAllRecommend" resultType="list">
+    <select id="queryAllRecommend" resultType="cn.whiteleaf03.blogbackend.entity.Recommend">
         select title, cover, type from recommend;
     </select>
 
