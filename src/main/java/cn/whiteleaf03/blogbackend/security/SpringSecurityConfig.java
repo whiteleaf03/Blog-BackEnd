@@ -1,4 +1,4 @@
-package cn.whiteleaf03.blogbackend.config;
+package cn.whiteleaf03.blogbackend.security;
 
 import cn.whiteleaf03.blogbackend.security.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
