@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -39,7 +40,12 @@ public class LoginStatusServiceImpl implements LoginStatusService {
     public ResponseResult login(BackstageUser backstageUser) {
         //用户认证
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(backstageUser.getUsername(), backstageUser.getPassword());
-        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
+        Authentication authenticate;
+        try {
+            authenticate = authenticationManager.authenticate(authenticationToken);
+        } catch (AuthenticationException e) {
+            return ResponseResult.error(e.getMessage());
+        }
 
         //查看认证结果
         if (Objects.isNull(authenticate)) {
