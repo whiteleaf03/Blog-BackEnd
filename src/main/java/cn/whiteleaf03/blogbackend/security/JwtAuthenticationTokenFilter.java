@@ -54,7 +54,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             throw new RuntimeException("token非法");
         }
         //从redis中获取用户信息
-        AuthBackstageUser authBackstageUser = redisCache.getCacheObject("login:" + userId);
+        AuthBackstageUser authBackstageUser = redisCache.getCacheObject("[OnlineUser]id:" + userId);
         if (Objects.isNull(authBackstageUser)) {
             throw new  RuntimeException("用户未登录");
         }
