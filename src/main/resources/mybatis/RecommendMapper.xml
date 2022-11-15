@@ -7,6 +7,6 @@
     </select>
 
     <insert id="addRecommend" parameterType="cn.whiteleaf03.blogbackend.entity.Recommend">
-        insert into blog.recommend (title, coverPath, resourcePath, type) value (#{title}, #{cover}, #{resourcePath},#{type});
+        insert into blog.recommend (title, coverPath, resourcePath, type) value (#{title}, #{coverPath}, #{resourcePath},#{type});
     </insert>
 </mapper>

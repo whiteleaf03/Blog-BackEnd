@@ -22,5 +22,5 @@ public interface RecommendMapper {
      * @param recommend 新增的推荐
      * @return 返回结果
      */
-    ResponseResult addRecommend(Recommend recommend);
+    void addRecommend(Recommend recommend);
 }
