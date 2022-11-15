@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.whiteleaf03.blogbackend.mapper.DataAnalysisMapper">
+    <select id="queryBackStageData" resultType="map">
+        select (select count(blog.comment.id) from blog.comment)     as comment,
+               (select count(blog.chunibyou.id) from blog.chunibyou) as chunibyou,
+               (select count(blog.note.id) from blog.note)           as note,
+               (select count(blog.recommend.id) from blog.recommend) as recommend,
+               (select count(blog.saysay.id) from blog.saysay)       as saysay;
+    </select>
+
+    <select id="queryFontDeskData" resultType="map">
+        select (select count(blog.note.id) from blog.note)           as note,
+               (select count(blog.recommend.id) from blog.recommend) as recommend,
+               (select count(blog.saysay.id) from blog.saysay)       as saysay;
+    </select>
+</mapper>
