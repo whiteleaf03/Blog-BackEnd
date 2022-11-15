@@ -24,7 +24,7 @@ public class Note {
     /**
      * 封面路径
      */
-    private String cover;
+    private String coverPath;
 
     /**
      * 标题
@@ -34,18 +34,18 @@ public class Note {
     /**
      * 副标题
      */
-    private String subtitle;
+    private String subTitle;
 
     /**
      * 内容 HTML格式
      */
     private String text;
 
-    public Note(Long id, Long date, String cover, String title, String subtitle) {
+    public Note(Long id, Long date, String coverPath, String title, String subTitle) {
         this.id = id;
         this.date = date;
-        this.cover = cover;
+        this.coverPath = coverPath;
         this.title = title;
-        this.subtitle = subtitle;
+        this.subTitle = subTitle;
     }
 }

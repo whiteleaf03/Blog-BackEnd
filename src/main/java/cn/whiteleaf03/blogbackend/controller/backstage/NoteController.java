@@ -4,6 +4,7 @@ import cn.whiteleaf03.blogbackend.entity.Note;
 import cn.whiteleaf03.blogbackend.service.backstage.NoteService.NoteService;
 import cn.whiteleaf03.blogbackend.utils.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ public class NoteController {
         this.noteService = noteService;
     }
 
+    @PostMapping("")
     public ResponseResult addNote(@RequestBody Note note) {
         return noteService.addNote(note);
     }
