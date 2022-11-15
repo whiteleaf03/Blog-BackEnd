@@ -34,4 +34,48 @@ public class SaysayServiceImpl implements SaysayService {
             return ResponseResult.error(e.getMessage());
         }
     }
+
+    /**
+     * 删除说说
+     * @param id 要删除说说的id
+     * @return 返回结果
+     */
+    @Override
+    public ResponseResult deleteSaysayById(Long id) {
+        try {
+            saysayMapper.deleteSaysayById(id);
+            return ResponseResult.success();
+        } catch (RuntimeException e) {
+            return ResponseResult.error(e.getMessage());
+        }
+    }
+
+    /**
+     * 修改说说
+     * @param saysay 修改的说说
+     * @return 返回结果
+     */
+    @Override
+    public ResponseResult putSaysayById(Saysay saysay) {
+        try {
+            saysayMapper.putSaysayById(saysay);
+            return ResponseResult.success();
+        } catch (RuntimeException e) {
+            return ResponseResult.error(e.getMessage());
+        }
+    }
+
+    /**
+     * 查询所有说说
+     * @return 返回说说列表
+     */
+    @Override
+    public ResponseResult queryAllSaysay() {
+        List<Saysay> list = saysayMapper.queryAllSaysay();
+        if (list.isEmpty()) {
+            return ResponseResult.error("暂无数据");
+        } else {
+            return ResponseResult.success(list);
+        }
+    }
 }

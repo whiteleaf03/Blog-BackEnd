@@ -21,4 +21,16 @@ public interface SaysayMapper {
      * @param saysay 添加的说说
      */
     void addSaysay(Saysay saysay);
+
+    /**
+     * 删除说说
+     * @param id 要删除说说的id
+     */
+    void deleteSaysayById(Long id);
+
+    /**
+     * 修改说说
+     * @param saysay 修改的说说
+     */
+    void putSaysayById(Saysay saysay);
 }

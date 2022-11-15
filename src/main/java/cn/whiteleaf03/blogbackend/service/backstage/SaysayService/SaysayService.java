@@ -13,4 +13,24 @@ public interface SaysayService {
      * @return 返回结果
      */
     ResponseResult addSaysay(Saysay saysay);
+
+    /**
+     * 删除说说
+     * @param id 要删除说说的id
+     * @return 返回结果
+     */
+    ResponseResult deleteSaysayById(Long id);
+
+    /**
+     * 修改说说
+     * @param saysay 修改的说说
+     * @return 返回结果
+     */
+    ResponseResult putSaysayById(Saysay saysay);
+
+    /**
+     * 查询所有说说
+     * @return 返回说说列表
+     */
+    ResponseResult queryAllSaysay();
 }

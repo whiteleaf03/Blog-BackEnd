@@ -3,10 +3,18 @@
 
 <mapper namespace="cn.whiteleaf03.blogbackend.mapper.SaysayMapper">
     <select id="queryAllSaysay" resultType="cn.whiteleaf03.blogbackend.entity.Saysay">
-        select date, text from saysay;
+        select * from blog.saysay;
     </select>
 
     <insert id="addSaysay" parameterType="cn.whiteleaf03.blogbackend.entity.Saysay">
-        insert into saysay (date, text) VALUE (#{date}, #{text});
+        insert into blog.saysay (date, text) VALUE (#{date}, #{text});
     </insert>
+
+    <delete id="deleteSaysayById" parameterType="long">
+        delete from blog.saysay where id = #{id};
+    </delete>
+
+    <update id="putSaysayById" parameterType="cn.whiteleaf03.blogbackend.entity.Saysay">
+        update blog.saysay set text = #{text} where id = #{id};
+    </update>
 </mapper>
