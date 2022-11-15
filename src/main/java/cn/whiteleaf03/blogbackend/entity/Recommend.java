@@ -17,14 +17,19 @@ public class Recommend {
     private Long id;
 
     /**
-     * 封面路径
-     */
-    private String cover;
-
-    /**
      * 标题
      */
     private String title;
+
+    /**
+     * 封面路径
+     */
+    private String coverPath;
+
+    /**
+     * 资源路径
+     */
+    private String resourcePath;
 
     /**
      * 类别

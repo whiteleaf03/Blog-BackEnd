@@ -243,3 +243,24 @@
 2022-11-15 10:04:00.445  INFO 27008 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2022-11-15 10:04:00.481  INFO 27008 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
 2022-11-15 10:04:00.486  INFO 27008 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-11-15 11:52:07.939  INFO 21512 --- [restartedMain] c.w.blogbackend.BlogBackEndApplication   : Starting BlogBackEndApplication using Java 17.0.4 on WhiteLeaf03-16p with PID 21512 (D:\Code\web\blog\v2.0-beta\Blog-BackEnd\target\classes started by WhiteLeaf03 in D:\Code\web\blog\v2.0-beta\Blog-BackEnd)
+2022-11-15 11:52:07.941  INFO 21512 --- [restartedMain] c.w.blogbackend.BlogBackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-11-15 11:52:07.989  INFO 21512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-15 11:52:07.989  INFO 21512 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-15 11:52:08.874  INFO 21512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-11-15 11:52:08.880  INFO 21512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-15 11:52:08.935  INFO 21512 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2022-11-15 11:52:09.976  INFO 21512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-15 11:52:09.990  INFO 21512 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-15 11:52:09.990  INFO 21512 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-11-15 11:52:10.166  INFO 21512 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-15 11:52:10.166  INFO 21512 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2177 ms
+2022-11-15 11:52:11.026  INFO 21512 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@47457bf5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a268e3e, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d8d4b56, org.springframework.security.web.header.HeaderWriterFilter@778f475c, org.springframework.security.web.authentication.logout.LogoutFilter@3b81215c, cn.whiteleaf03.blogbackend.security.JwtAuthenticationTokenFilter@3f470062, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55a21169, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39fdf025, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ec4e29e, org.springframework.security.web.session.SessionManagementFilter@70fa71d8, org.springframework.security.web.access.ExceptionTranslationFilter@35c2300b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b064d06]
+2022-11-15 11:52:11.749  INFO 21512 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-15 11:52:11.853  INFO 21512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-15 11:52:11.871  INFO 21512 --- [restartedMain] c.w.blogbackend.BlogBackEndApplication   : Started BlogBackEndApplication in 4.397 seconds (JVM running for 5.54)
+2022-11-15 11:52:17.037  INFO 21512 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-15 11:52:17.037  INFO 21512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-15 11:52:17.038  INFO 21512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-15 11:52:17.098  INFO 21512 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-15 11:52:17.278  INFO 21512 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

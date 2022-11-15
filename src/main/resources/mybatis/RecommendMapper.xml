@@ -3,10 +3,10 @@
 
 <mapper namespace="cn.whiteleaf03.blogbackend.mapper.RecommendMapper">
     <select id="queryAllRecommend" resultType="cn.whiteleaf03.blogbackend.entity.Recommend">
-        select title, cover, type from recommend;
+        select title, coverPath, resourcePath, type from blog.recommend;
     </select>
 
     <insert id="addRecommend" parameterType="cn.whiteleaf03.blogbackend.entity.Recommend">
-        insert into recommend (title, cover, type) value (#{title}, #{cover}, #{type});
+        insert into blog.recommend (title, coverPath, resourcePath, type) value (#{title}, #{cover}, #{resourcePath},#{type});
     </insert>
 </mapper>

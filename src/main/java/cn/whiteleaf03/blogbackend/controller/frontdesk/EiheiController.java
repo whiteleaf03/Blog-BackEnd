@@ -20,7 +20,6 @@ public class EiheiController {
 
     @GetMapping("/recommend")
     public ResponseResult getRecommend() {
-        System.out.println("苹果");
         return eiheiService.queryAllRecommend();
     }
 }
