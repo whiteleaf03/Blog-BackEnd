@@ -23,4 +23,14 @@ public class CommentController {
     public ResponseResult addComment(@RequestBody Comment comment) {
         return commentService.addComment(comment);
     }
+
+    @GetMapping("")
+    public ResponseResult queryAllComment() {
+        return commentService.queryAllComment();
+    }
+
+    @DeleteMapping("")
+    public ResponseResult deleteCommentById(@RequestBody Comment comment) {
+        return commentService.deleteCommentById(comment.getId());
+    }
 }

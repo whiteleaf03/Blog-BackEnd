@@ -18,4 +18,10 @@ public interface CommentMapper {
      * @param comment 要添加的评论
      */
     void addComment(Comment comment);
+
+    /**
+     * 删除评论
+     * @param id 要删除评论的id
+     */
+    void deleteCommentById(Long id);
 }

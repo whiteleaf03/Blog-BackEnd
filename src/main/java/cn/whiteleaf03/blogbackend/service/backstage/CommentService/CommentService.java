@@ -13,4 +13,17 @@ public interface CommentService {
      * @return 返回结果
      */
     ResponseResult addComment(Comment comment);
+
+    /**
+     * 查询所有评论
+     * @return 返回评论列表
+     */
+    ResponseResult queryAllComment();
+
+    /**
+     * 删除评论
+     * @param id 要删除评论的id
+     * @return 返回结果
+     */
+    ResponseResult deleteCommentById(Long id);
 }

@@ -3,11 +3,15 @@
 
 <mapper namespace="cn.whiteleaf03.blogbackend.mapper.CommentMapper">
     <select id="queryAllComment" resultType="cn.whiteleaf03.blogbackend.entity.Comment">
-        select date, nickname, email, text
-        from comment;
+        select *
+        from blog.comment;
     </select>
 
     <insert id="addComment" parameterType="cn.whiteleaf03.blogbackend.entity.Comment">
-        insert into comment (date, nickname, email, text) value (#{date}, #{nickname}, #{email}, #{text});
+        insert into blog.comment (date, nickname, email, text) value (#{date}, #{nickname}, #{email}, #{text});
     </insert>
+
+    <delete id="deleteCommentById" parameterType="long">
+        delete from blog.comment where id = #{id};
+    </delete>
 </mapper>
