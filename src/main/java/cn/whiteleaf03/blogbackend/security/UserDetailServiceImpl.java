@@ -1,6 +1,5 @@
-package cn.whiteleaf03.blogbackend.service.backstage;
+package cn.whiteleaf03.blogbackend.security;
 
-import cn.whiteleaf03.blogbackend.security.AuthBackstageUser;
 import cn.whiteleaf03.blogbackend.entity.BackstageUser;
 import cn.whiteleaf03.blogbackend.mapper.BackstageUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;

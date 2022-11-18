@@ -3,6 +3,7 @@ package cn.whiteleaf03.blogbackend.security;
 import cn.whiteleaf03.blogbackend.utils.JwtUtil;
 import cn.whiteleaf03.blogbackend.utils.RedisCache;
 import io.jsonwebtoken.Claims;
+import io.lettuce.core.output.ScanOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContext;
@@ -54,13 +55,19 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             throw new RuntimeException("token非法");
         }
         //从redis中获取用户信息
-        AuthBackstageUser authBackstageUser = redisCache.getCacheObject("[OnlineUser]id:" + userId);
+        AuthBackstageUser authBackstageUser;
+        try {
+            System.out.println("尝试获取信息");
+            authBackstageUser = redisCache.getCacheObject("[OnlineUser]id:" + userId);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
         if (Objects.isNull(authBackstageUser)) {
             throw new  RuntimeException("用户未登录");
         }
         //存入SecurityContextHolder
         //TODO 获取权限信息 封装到Authentication
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(authBackstageUser, null, null);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(authBackstageUser, null, authBackstageUser.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         filterChain.doFilter(request, response);
     }

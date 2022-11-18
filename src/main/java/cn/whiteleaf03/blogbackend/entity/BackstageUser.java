@@ -33,8 +33,8 @@ public class BackstageUser {
     private String email;
 
     /**
-     * 账户类型
+     * 账户权限
      */
-    private String level;
+    private String authority;
 
 }
