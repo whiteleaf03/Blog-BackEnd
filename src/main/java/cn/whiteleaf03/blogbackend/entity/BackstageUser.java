@@ -35,6 +35,6 @@ public class BackstageUser {
     /**
      * 账户类型
      */
-    private String level;
+    private String authority;
 
 }
