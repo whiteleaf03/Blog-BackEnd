@@ -24,6 +24,7 @@ public class NoteController {
 
     @PostMapping("")
     public ResponseResult addNote(@RequestBody Note note) {
+        System.out.println(note.toString());
         return noteService.addNote(note);
     }
 }

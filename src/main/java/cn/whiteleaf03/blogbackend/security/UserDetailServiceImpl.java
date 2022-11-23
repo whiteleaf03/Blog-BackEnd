@@ -1,4 +1,4 @@
-package cn.whiteleaf03.blogbackend.service.backstage;
+package cn.whiteleaf03.blogbackend.security;
 
 import cn.whiteleaf03.blogbackend.security.AuthBackstageUser;
 import cn.whiteleaf03.blogbackend.entity.BackstageUser;
@@ -18,18 +18,18 @@ import java.util.Objects;
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
-    private final BackstageUserMapper backendUserMapper;
+    private final BackstageUserMapper backstageUserMapper;
 
     @Autowired
-    public UserDetailServiceImpl(BackstageUserMapper backendUserMapper) {
-        this.backendUserMapper = backendUserMapper;
+    public UserDetailServiceImpl(BackstageUserMapper backstageUserMapper) {
+        this.backstageUserMapper = backstageUserMapper;
     }
 
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //查询用户信息
-        BackstageUser user = backendUserMapper.selectSingleBackEndUserByUsername(username);
+        BackstageUser user = backstageUserMapper.selectSingleBackEndUserByUsername(username);
         //TODO 返回权限信息
         if (Objects.isNull(user)) {
             //未查询到该用户

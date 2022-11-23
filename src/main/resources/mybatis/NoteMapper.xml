@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.whiteleaf03.blogbackend.mapper.NoteMapper">
-    <select id="queryAllNote" resultType="list">
-        select id, date, cover, title, subtitle
-        from note;
+    <select id="queryAllNote" resultType="cn.whiteleaf03.blogbackend.entity.Note">
+        select id, date, coverPath, title, subtitle
+        from blog.note;
     </select>
 
     <select id="querySingleNoteById" parameterType="long" resultType="cn.whiteleaf03.blogbackend.entity.Note">
         select *
-        from note
+        from blog.note
         where id = #{id};
     </select>
 
     <insert id="addNote" parameterType="cn.whiteleaf03.blogbackend.entity.Note">
-        insert into note (date, cover, title, subtitle, text) value (#{date}, #{cover}, #{title}, #{subtitle}, #{text});
+        insert into blog.note (date, coverPath, title, subTitle, text) value (#{date}, #{coverPath}, #{title}, #{subTitle}, #{text});
     </insert>
 </mapper>
