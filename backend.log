@@ -178,3 +178,24 @@ Caused by: org.apache.ibatis.builder.BuilderException: Mapper's namespace cannot
 2022-11-24 09:18:03.466  INFO 89904 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2022-11-24 09:28:40.804  INFO 89904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-11-24 09:28:40.811  INFO 89904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-24 09:28:43.620  INFO 80052 --- [restartedMain] c.w.blogbackend.BlogBackEndApplication   : Starting BlogBackEndApplication using Java 17.0.4 on WhiteLeaf03-16p with PID 80052 (D:\Code\web\blog\v2.0-beta\Blog-BackEnd\target\classes started by WhiteLeaf03 in D:\Code\web\blog\v2.0-beta\Blog-BackEnd)
+2022-11-24 09:28:43.621  INFO 80052 --- [restartedMain] c.w.blogbackend.BlogBackEndApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-11-24 09:28:43.650  INFO 80052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-24 09:28:43.651  INFO 80052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-24 09:28:44.094  INFO 80052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-11-24 09:28:44.099  INFO 80052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-24 09:28:44.124  INFO 80052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-11-24 09:28:44.715  INFO 80052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-24 09:28:44.725  INFO 80052 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-24 09:28:44.725  INFO 80052 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-11-24 09:28:44.858  INFO 80052 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-24 09:28:44.859  INFO 80052 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1207 ms
+2022-11-24 09:28:45.540  INFO 80052 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5537ef24, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15bacf58, org.springframework.security.web.context.SecurityContextPersistenceFilter@5be5f14, org.springframework.security.web.header.HeaderWriterFilter@2210a7ba, org.springframework.security.web.authentication.logout.LogoutFilter@4337a312, cn.whiteleaf03.blogbackend.security.JwtAuthenticationTokenFilter@12800a06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63fb7326, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@861ce9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6745fb28, org.springframework.security.web.session.SessionManagementFilter@15522a3c, org.springframework.security.web.access.ExceptionTranslationFilter@29373f6e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64349f2d]
+2022-11-24 09:28:45.942  INFO 80052 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-24 09:28:45.975  INFO 80052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-24 09:28:45.986  INFO 80052 --- [restartedMain] c.w.blogbackend.BlogBackEndApplication   : Started BlogBackEndApplication in 2.622 seconds (JVM running for 3.385)
+2022-11-24 09:28:46.012  INFO 80052 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-24 09:28:46.012  INFO 80052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-24 09:28:46.013  INFO 80052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-24 09:28:46.053  INFO 80052 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-24 09:28:46.167  INFO 80052 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

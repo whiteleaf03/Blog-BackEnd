@@ -36,3 +36,4 @@ build/
 *.properties
 
 backend.log
+*.gz
